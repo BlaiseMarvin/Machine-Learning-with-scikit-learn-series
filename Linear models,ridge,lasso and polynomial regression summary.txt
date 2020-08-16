@@ -1,0 +1,57 @@
+Linear models
+For a particular instance, express the target value as a weighted sum of the variables(features).
+Training the model refers to calculating the values of these coefficients, i.e. the weights that actually fit the data.
+for example, if we are dealing with a model that predicts the house price basing on two variables, i.e. the tax and age
+the linear model we create will be something like this
+y=constant + coeff1(tax) + coeff2(age)
+by training the model, we actually come up with the constant and coeff1 and 2 that help us make good predictions.
+PS: y is the target value, i.e. the house price in this case.
+
+The constant can be called the bias, or intercept of the model.
+
+If say we have one feature from our data called x,
+Then our prediction of the data will be, y=wx + b
+where y is our output (we predict a straight line for the data), w is our weight (the weight thats derived from the training data during the training phase), and b is our bias point that is also derived from the training data during the training phase.
+
+One method for deriving w and b during the training phase is called the Least Squares method.
+What this method does, in terms of predicting w and b, is that it finds the line or slope with the least value of the mean squared error.
+When you come up with the line from your linear model (your y= wx + b), your y value is the predicted value for a particular point x, however, from your plot of features and target values on feature space, your x value could actually correspond to another particular y value. 
+The squared difference between the two y values is the squared error value.
+Doing this for all points and dividing by the number of points, we get the mean squared value, or error.
+The least squares method, calculates or derives a line with w and b such that these least squares are minimised.
+
+Because linear models, make strong assumptions on the data, i.e. they predict correlation that's characterised by the weights and bias points, they are much better at generalising on unseen data than the knn regressor method.
+
+We've so far basically looked at the linear model called the Linear Regression.
+
+
+Ridge Regression
+
+Basically the same as Linear Regression described above, but it however adds a penalty for large variations in w parameters.
+
+Even the prediction method is actually the same as with linear regression.
+The addition of a penalty term to the learning algorithm is called regularization.
+This penalty term is added to curb large variations in w, remember.
+Regularisation in machine learning is usually a way to reduce model complexity and thus reduce and prevent overfitting
+This regularisation is controlled by the parameter alpha.
+The larger, the alpha, the more the regularisation and the simpler the model becomes. i.e. the penalty for large weights is high and the weights become actually smaller. 
+The model which is a weighted sum of simpler weights is actually simpler.
+
+
+This penalty we are applying through aplha is basically applied on all the weights of all features.
+If the data isn't scaled, then actually alpha isn't applied fairly, some features may be contributing more to the high w value than others.
+
+Lasso Regression.
+Lasso regression is almost the same as Rigde regression.
+Lasso regression on the other hand however uses L1 penalty not the L2 penalty used by ridge regression.
+Lasso doesn't impose the penalty on the sum of the weights but it however imposes the regularisation penalty on the absolute value of the weights.
+by doing this through lasso, some weights can actually tend to zero. i.e. this method is helpful if some features are of greater importance in terms of making predictions than others.
+L1 penalty is to minimise the sum of absolute values of the coefficients.
+
+
+Generally, alpha in both cases i.e. in both L1 and L2 regularisation for lasso and ridge regression the higher the value of alpha the higher the sum of the mean square error, this means that the model isn't all that accurate on the training data, accuracy is low, underfits and is a simple model.
+
+Reducing the alpha value implies that the model is tending towards complexity, is tending towards overfitting cuz it lowers the mean square error.
+
+Polynomial features
+We can apply polynomial features to our data to make it more detailed, these can include relationshps beyween our input features such as mulitplying them together, squaring, etc. to add more detail and capture hidden details of the data.

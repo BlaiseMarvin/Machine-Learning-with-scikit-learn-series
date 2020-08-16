@@ -1,0 +1,11 @@
+Kernelised SVM
+Gamma controls how far the influence of a single training model reaches
+Gamma- small value of gamma- simpler models, smoother decision boundaries, even points further apart are considered similar, results in more points being grouped together and smoother decision boundaries.
+small gamma-larger similarity radius.
+
+Larger values of gamma- Kernel value decays quickly and points have to be close to be considered similar.
+This results in more complex, tightly constrained decision boundaries.
+
+Just like in linear SVMs, with kernelised SVMs we can also vary C,which interacts with gamma.
+If gamma is large then C will have little or no effect.
+If gamma is small, the effect of C will be the same as with a linear classifier.

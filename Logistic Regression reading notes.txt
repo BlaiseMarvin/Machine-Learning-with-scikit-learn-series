@@ -1,0 +1,27 @@
+Logistic Regression
+In the simplest case, without including its other flavors, logistic regression is basically used for binary classification tasks.
+
+The logistic regression almost works similarly to linear regression, it computes weighted sum of the input features w, and the constant term b. 
+However logistic regression method runs this function through a non linear function, f, which is called a logistic function
+
+The logistic function is an S-shaped function that basically tends to 1 as the input value increases away from zero, and it tends to zero as the input value decreases away from 0.
+The effect of applying the logistic function is to compress the output so that it is limited to values between zero and 1.
+
+Because the logistic curve varies or it actually compresses the output to values between zero and 1, we can actually use value zero as the negative target class, and 1 as the positive target class.
+
+Then values in between can be basically expressed as probabilities of actually belonging to either class 0 or actually class 1.
+
+So given our training data set, with datapoints belonging to the positive class and also with those data points belonging to the negative class, we actually can be able to formulate the logistic curve, that follows the logistic function(this is our model). This logistic curve will then be able to predict the class to which given random data points will be able to actally fall into.
+
+So the logistic function,that's formualted is a function of input features, and these coefficients are calculated.
+
+If the input features are say 2, the logistic function will basically be 3D
+
+As per the logistic function that actually helps us classify, if the datapoint actually lies say 50% higher, then it actually qualifies for one class, if it is also >50% of one i.e. closer to a particular class, then that's where it belongs, that is where it actually is classified.
+
+In Logistic regression, L2 regularization is on by default, with C=1.
+For Logistic regression and linear SVM the higher the value of C, the less the regularisation, i.e. the more complex the model actually becomes.
+So for high values of C, the model tries to fit the training data as well as possible.
+For small values of C, the model tries to find more values belonging to class zero even though the result actually makes it fit the training data actually worse.
+i.e. for small values of C, i.e. we have more regularisation, simple models and the model actually puts more emphasis on one feature.
+
